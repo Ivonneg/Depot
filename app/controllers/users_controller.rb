@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize
+  skip_before_action :authorize, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -57,9 +57,13 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: "User #{@user.name} was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  rescue_from 'User::Error' do |exception|
+  redirect_to users_url, notice: exception.message
   end
 
   private
