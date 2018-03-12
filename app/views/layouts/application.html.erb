@@ -15,8 +15,8 @@
 
     <div class="w3-bar w3-deep-purple">
       <a href="/" class="w3-bar-item w3-text-white w3-button">Depot Shop</a>
-      <a href="/products" class="w3-bar-item w3-text-white w3-button w3-hide-small">Products</a>
       <a href="/static_pages/about" class="w3-bar-item w3-text-white w3-button w3-hide-small">About</a>
+      <a href="/products" class="w3-bar-item w3-text-white w3-button w3-hide-small">Products</a>
       <a href="/static_pages/help" class="w3-bar-item w3-text-white w3-button w3-hide-small">Help</a>
       <%= link_to 'Login', login_path, method: :post, class:"w3-light-gray w3-bar-item w3-button w3-border w3-right" %>
       <% if session[:user_id] %>
@@ -33,10 +33,10 @@
     </div>
     
     <div id="dropDown" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="/" class="w3-bar-item w3-button">Home</a>
-      <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
+      <a href="/static_pages/home" class="w3-bar-item w3-button">Home</a>
       <a href="/static_pages/about" class="w3-bar-item w3-button">About</a>
-      <a href="/products" class="w3-bar-item w3-button">Manage Products</a>
+      <a href="/products" class="w3-bar-item w3-button">Products</a>
+      <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
     </div>
 
    <div class="w3-container">
